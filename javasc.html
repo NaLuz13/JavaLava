@@ -15,7 +15,7 @@
             <div class="container">
               <div class="d-grid gap-2 d-md-flex justify-content-lg-start">
                 <a href="" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-                    <a href="index.html"><img src="javaCodoaCodo/codoacodo.png" width="100" height="70"><!--width: ancho, height: largo-->
+                    <a href="index.html"><img src="codoacodo.png" width="100" height="70"><!--width: ancho, height: largo-->
                     </a>
                     <span class="fs-5 text-white">Conf Bs As</span>
                 <ul class="p-2 d-grid gap-2 d-md-flex justify-content-md-end">
@@ -86,7 +86,7 @@
 
 
 
-
+    <form action="#" id="formulario">
     <div class="row-cols-2 d-flex justify-content-center">
                     <div class="">
                         <div class="row g-1 text-center">
@@ -104,29 +104,31 @@
                                 <input type="text" class="form-control" id="email" placeholder="nameOfEmail@extension.com" value="" required>
                               </div>
                               <div class="col-sm-6 text-center">
-                                <label for="cantidad" class="form-label"></label>
+                                <p class="text-center">Cantidad</p>
                                 <input type="text" class="form-control" id="cantidad" placeholder="0" value="" required>
                               </div>
                               <div class="col-sm-6 text-center">
-                              <select class="form-select col-sm-6 text-center" aria-label="">
+                              <p class="text-inline">Categoría</p>
+                              <select name="" id="inputState" class="form-control" id="categoria">
                                 <option selected>---</option>
-                                <option value="1">Estudiante</option>
-                                <option value="2">Trainee</option>
-                                <option value="3">Junior</option>
+                                <option value="1" id="ca1">Estudiante</option>
+                                <option value="2" id="ca2">Trainee</option>
+                                <option value="3" id="ca3">Junior</option>
                               </select>
                               </div>
 
 
                             <div class="">
-                            <button type="button" class="btn btn-lg btn-success">Borrar</button>
+                              <div class="alert alert-primary text-secondary" id="totalAPagar">Total a pagar:$</div>
+                            <button type="reset" class="btn btn-lg btn-success" onclick="borrar()">Borrar</button>
                             
-                            <button type="button" class="btn btn-lg btn-success">Resumen</button>
+                            <button type="button" id="botonCalcular" onclick="resumen()" class="btn btn-lg btn-success">Resumen</button>
 
                           </div> 
                         </div>
                     </div>
     </div>                 
-                      
+    </form>                
 
 
 
@@ -143,6 +145,7 @@
                     <a href="#" class="nav-link px-2 text-secondary m-3">Estudiantes</a>
                   </ul>
               </footer>
-          
+              <script src="javasc.js"></script>      
+
 </body>
 </html>

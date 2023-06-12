@@ -1,46 +1,155 @@
-//alert("alo");
+const ticket = 200;
+let descuentoEstudiante, descuentTrainee, descuentoJunior;
 
-function sumar(){
-var num1 = document.getElementById("ca1").value;
-var num2 = document.getElementById("ca2").value;
-var num3 = document.getElementById("ca3").value;
-var suma = parseInt(ca1) + parseInt(num2) + parseInt(num3);
-alert("la respuesta es: " + suma);
+descuentoEstudiante = 0.80;
+descuentoTrainee = 0.50;
+descuentoJunior = 0.15;
+
+let formulario,nombre,apellido,correo,cantidad,categoria,total_p,botonBorrar,botonResumen;
+
+formulario = document.querySelector('#formulario');
+cantidad = document.querySelector('#cantidadEntrada');
+categoria = document.querySelector('#categoria');
+total_p = document.querySelector('#totalAPagar');
+botonResumen = document.querySelector('#resumen');
+botonBorrar = document.querySelector('#borrar');
+
+
+function calcularPago() {
+    let total = cantidad.value * ticket;
+    switch (categoria.value){
+        case "estudiante": 
+        total = total - (total * descuentoEstudiante)
+        break;
+
+        case "trainee":
+            total = total - (total * descuentoTrainee)
+            break;
+
+        case "junior":
+            total = total - (total * descuentoJunior)
+            break;
+    }
+
+total_p.innerHTML = `total a pagar: $ ${total}`;
+
+}
+
+botonResumen.addEventListener('click', (event) => {
+    event.preventDefault();
+    comprobacion();
+    calcularPago();
+})
+
+
+botonBorrar.addEventListener('click', () => formulario.reset());
+
+function comprobacion(){
+nombre = document.querySelector('input[placeholder="firstName"]').value;
+apellido = document.querySelector('input[placeholder="lastName"]').value;
+correo = document.querySelector('input[placeholder="email"]').value;
+
+if(nombre== '' && apellido== '' && correo== ''){
+    alert ('Campos obligatorios');
+    return
+}
+else if(nombre== ''){
+    alert ('Campo obligatorio');
+    return
+}
+else if(apellido== '' || cantidad.value == '0'){
+    alert ('Campo obligatorio');
+    return
+}
+else if(correo== ''){
+    alert ('Campo obligatorio');
+    return
+}
+else if(cantidad.value== ''){
+    alert ('Campo obligatorio');
+    return
+}
 }
 
 
-const cantidad = document.getElementById('cantidad')
 
-const botonCalcular = document.getElementById('botonCalcular')
 
-const categoria = document.getElementById('inputState')
 
-const aPagar = document.getElementById('aPagar')
 
-//botonCalcular.addEventListener('click',resumen)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+const cantidadEntradas = document.querySelector('cantidadEntrada')
+
+const botonCalcular = document.querySelector('botonCalcular')
+
+const categoria = document.querySelector('inputState')
+
+const aPagar = document.querySelector('aPagar')
+
+const valorFinal = 0;
+
+const ticket = 200;
+
+botonCalcular.addEventListener('click',resumen)
 
 function descuento(numero, porcentaje){
 return numero - (numero*porcentaje / 100)
 }
-/**otra var nota1 =
-var nota2 = 
-suma = nota1 + nota2;
-promedio = suma/2;
-alert("el resultado es: "+ promedio)
-**/
+
 
 function resumen(){
-    console.log(categoria.value)
     console.log(cantidadEntradas.value)
-    cantidadEntradas.value
     if(categoria.value == "ca1"){
-        aPagar= 
+        aPagar= ticket.value * 0.80;
+       return valorFinal= aPagar * cantidadEntradas.value;
+
     } else if(categoria.value == "ca2"){
-
+        aPagar= ticket.value * 0.50
+    } else if(categoria.value == "ca3"){
+        aPagar= ticket.value * 0.15
     } else {
-
+        ticket.value;
     }
-
+}
 function borrar(){
     document.addEventListener('DOMContentLoaded', function(){
         let formulario = document.getElementById('formulario');
@@ -51,5 +160,4 @@ function borrar(){
     }
 
 
-    totalCompra.innerHTML = cantidadEntradas.value
-}
+totalCompra.innerHTML = cantidadEntradas.value*/

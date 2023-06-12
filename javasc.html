@@ -105,25 +105,26 @@
                               </div>
                               <div class="col-sm-6 text-center">
                                 <p class="text-center">Cantidad</p>
-                                <input type="text" class="form-control" id="cantidad" placeholder="0" value="" required>
+                                <input type="text" class="form-control" id="cantidadEntrada" placeholder="0" value="" required>
                               </div>
                               <div class="col-sm-6 text-center">
                               <p class="text-inline">Categoría</p>
-                              <select name="" id="inputState" class="form-control" id="categoria">
-                                <option selected>---</option>
-                                <option value="1" id="ca1">Estudiante</option>
-                                <option value="2" id="ca2">Trainee</option>
-                                <option value="3" id="ca3">Junior</option>
+                              <select name="" class="form-control" id="categoria">
+                                <option selected value="">---</option>
+                                <option value="estudiante">Estudiante</option>
+                                <option value="trainee">Trainee</option>
+                                <option value="junior">Junior</option>
                               </select>
                               </div>
 
 
-                            <div class="">
-                              <div class="alert alert-primary text-secondary" id="totalAPagar">Total a pagar:$</div>
-                            <button type="reset" class="btn btn-lg btn-success" onclick="borrar()">Borrar</button>
-                            
-                            <button type="button" id="botonCalcular" onclick="resumen()" class="btn btn-lg btn-success">Resumen</button>
-
+                            <div class="mb-3">
+                              <p class="alert alert-primary text-secondary" id="totalAPagar">Total a pagar:$ </p>
+                            </div>
+                              <div class="d-grid gap-2 col-6 mx-auto">
+                            <button type="button" id="borrar" class="btn btn-lg btn-success" >Borrar</button>
+                            <button type="button" id="resumen" class="btn btn-lg btn-success">Resumen</button>
+                            </div>
                           </div> 
                         </div>
                     </div>
